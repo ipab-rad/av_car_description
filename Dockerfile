@@ -1,15 +1,12 @@
-FROM ros:humble-ros-base-jammy
+FROM ros:humble-ros-base-jammy AS base
 
-# Install basic dev tools (And clean apt cache afterwards)
+# Install key dependencies
 RUN apt update \
     && DEBIAN_FRONTEND=noninteractive \
         apt -y --quiet --no-install-recommends install \
-        # Command-line editor
-        nano \
-        # Base network tools
-        inetutils-tools \
-        # Bash auto-completion for convenience
-        bash-completion \
+        ros-$ROS_DISTRO-xacro \
+        ros-$ROS_DISTRO-robot-state-publisher \
+        ros-$ROS_DISTRO-joint-state-publisher \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup ROS workspace folder
@@ -17,14 +14,12 @@ ENV ROS_WS /opt/ros_ws
 RUN mkdir -p $ROS_WS/src
 WORKDIR $ROS_WS
 
+# -----------------------------------------------------------------------
+
+FROM base AS build
+
 # Import code from repos
 ADD . $ROS_WS/src/
-
-# Install dependencies for all ROS packages found in src
-RUN apt update \
-    && DEBIAN_FRONTEND=noninteractive \
-	&& rosdep install --from-paths $ROS_WS/src --ignore-src -q -r -y \
-    && rm -rf /var/lib/apt/lists/*
 
 # Source ROS setup for dependencies and build our code
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
@@ -37,3 +32,28 @@ RUN sed --in-place --expression \
 
 # launch ros package
 CMD ["ros2", "launch", "car_description", "car_description.launch.xml"]
+
+# -----------------------------------------------------------------------
+
+FROM base AS dev
+
+# Install basic dev tools (And clean apt cache afterwards)
+RUN apt update \
+    && DEBIAN_FRONTEND=noninteractive \
+        apt -y --quiet --no-install-recommends install \
+        # Command-line editor
+        nano \
+        # Ping network tools
+        inetutils-ping \
+        # Bash auto-completion for convenience
+        bash-completion \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add sourcing local workspace command to bashrc for convenience when running interactively
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc
+
+# Add colcon build alias for convenience
+RUN echo 'alias colcon_build="colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash"' >> /root/.bashrc
+
+# Enter bash for development
+CMD ["bash"]
