@@ -1,14 +1,22 @@
 #!/bin/bash
-###############################################################################
-# Build docker full image and run ROS code interactively for debugging        #
-###############################################################################
+######################################################################################
+# Build docker image and run ROS code either for runtime or interactively with bash  #
+######################################################################################
+
+# Initialise CMD as empty
+CMD=""
+
+# If an arg is defined, start contaier with bash
+if [ -n "$1" ]; then
+    CMD="bash"
+fi
 
 # Build docker image only up to base stage
 DOCKER_BUILDKIT=1 docker build \
 -t car_description_humble \
--f Dockerfile --target build .
+-f Dockerfile --target runtime .
 
 # Run docker image without volumes
 docker run -it --rm --net host \
 -v /dev/shm:/dev/shm \
-car_description_humble
+car_description_humble $CMD

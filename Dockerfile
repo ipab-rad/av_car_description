@@ -11,15 +11,14 @@ RUN apt update \
 
 # Setup ROS workspace folder
 ENV ROS_WS /opt/ros_ws
-RUN mkdir -p $ROS_WS/src
 WORKDIR $ROS_WS
+
+# Import code from repos
+COPY . src/
 
 # -----------------------------------------------------------------------
 
-FROM base AS build
-
-# Import code from repos
-ADD . $ROS_WS/src/
+FROM base AS prebuilt
 
 # Source ROS setup for dependencies and build our code
 RUN . /opt/ros/$ROS_DISTRO/setup.sh \
@@ -29,9 +28,6 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 RUN sed --in-place --expression \
       '$isource "$ROS_WS/install/setup.bash"' \
       /ros_entrypoint.sh
-
-# launch ros package
-CMD ["ros2", "launch", "car_description", "car_description.launch.xml"]
 
 # -----------------------------------------------------------------------
 
@@ -55,5 +51,12 @@ RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc
 # Add colcon build alias for convenience
 RUN echo 'alias colcon_build="colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash"' >> /root/.bashrc
 
-# Enter bash for development
+# Enter bash for clvelopment
 CMD ["bash"]
+
+# -----------------------------------------------------------------------
+
+FROM prebuilt as runtime
+
+# launch ros package
+CMD ["ros2", "launch", "car_description", "car_description.launch.xml"]
