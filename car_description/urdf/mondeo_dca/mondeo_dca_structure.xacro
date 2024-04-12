@@ -17,7 +17,7 @@
     <visual name="chassis">
       <origin xyz="${1.361 - base_link_x} 0 -0.33647" rpy="0 0 ${pi/2}"/>
       <geometry>
-        <mesh filename="package://car_meshes/meshes/mondeo_blue.dae" scale="1 1 1"/>
+        <mesh filename="package://car_meshes/meshes/mondeo_grey.dae" scale="1 1 1"/>
       </geometry>
       <material name="black.001"/>
     </visual>
