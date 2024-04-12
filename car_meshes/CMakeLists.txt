@@ -5,8 +5,8 @@ find_package(ament_cmake_ros REQUIRED)
 
 ## Installation...
 
-install(DIRECTORY meshes/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes
-    FILES_MATCHING PATTERN "*.dae" PATTERN "*.png")
+install(DIRECTORY meshes
+    DESTINATION share/${PROJECT_NAME}/
+    FILES_MATCHING PATTERN "*.dae" PATTERN "*.png" PATTERN "*.stl")
 
 ament_package()
