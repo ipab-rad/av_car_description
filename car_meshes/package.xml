@@ -7,6 +7,7 @@
     <version>1.0.0</version>
     <description>The car_meshes package. Most models are custom, body_collision.stl was taken from dbw_mkz_description.</description>
     <maintainer email="alex.bordallo@ed.ac.uk">Alejandro Bordallo</maintainer>
+    <maintainer email="hcruzgo@ed.ac.uk">Hector Cruz</maintainer>
     <license>Apache-2.0</license>
 
     <buildtool_depend>ament_cmake</buildtool_depend>
