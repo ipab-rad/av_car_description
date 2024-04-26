@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2024-04-26)
+------------------
 * Fix pre-commit linting, advice and suggestions
 * Fix pkg names, vers. and descriptions pre-release
 * Add Hector Cruz as maintainer
