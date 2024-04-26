@@ -8,12 +8,12 @@ ENV NEW_MIRROR mirror.bytemark.co.uk
 RUN sed -i "s/$OLD_MIRROR\|$SEC_MIRROR/$NEW_MIRROR/g" /etc/apt/sources.list
 
 # Install key dependencies
-RUN apt update \
+RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
-        apt -y --quiet --no-install-recommends install \
-        ros-$ROS_DISTRO-xacro \
-        ros-$ROS_DISTRO-robot-state-publisher \
-        ros-$ROS_DISTRO-joint-state-publisher \
+        apt-get -y --quiet --no-install-recommends install \
+        ros-"$ROS_DISTRO"-xacro \
+        ros-"$ROS_DISTRO"-robot-state-publisher \
+        ros-"$ROS_DISTRO"-joint-state-publisher \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup ROS workspace folder
@@ -28,7 +28,7 @@ FROM base AS prebuilt
 COPY . src/
 
 # Source ROS setup for dependencies and build our code
-RUN . /opt/ros/$ROS_DISTRO/setup.sh \
+RUN . /opt/ros/"$ROS_DISTRO"/setup.sh \
     && colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 # -----------------------------------------------------------------------
@@ -36,9 +36,9 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 FROM base AS dev
 
 # Install basic dev tools (And clean apt cache afterwards)
-RUN apt update \
+RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive \
-        apt -y --quiet --no-install-recommends install \
+        apt-get -y --quiet --no-install-recommends install \
         # Command-line editor
         nano \
         # Ping network tools
@@ -47,11 +47,12 @@ RUN apt update \
         bash-completion \
     && rm -rf /var/lib/apt/lists/*
 
-# Add sourcing local workspace command to bashrc for convenience when running interactively
-RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc
-
+# Add sourcing local workspace command to bashrc when running interactively
 # Add colcon build alias for convenience
-RUN echo 'alias colcon_build="colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release && source install/setup.bash"' >> /root/.bashrc
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /root/.bashrc && \
+    echo 'alias colcon_build="colcon build --symlink-install \
+            --cmake-args -DCMAKE_BUILD_TYPE=Release && \
+            source install/setup.bash"' >> /root/.bashrc
 
 # Enter bash for clvelopment
 CMD ["bash"]
@@ -60,11 +61,12 @@ CMD ["bash"]
 
 FROM base as runtime
 
+# Copy artifacts/binaries from prebuilt
 COPY --from=prebuilt $ROS_WS/install $ROS_WS/install
 
-# Add command to docker entrypoint to source newly compiled code when running docker container
+# Add command to docker entrypoint to source newly compiled code in container
 RUN sed --in-place --expression \
-      '$isource "$ROS_WS/install/setup.bash"' \
+      "\$isource \"$ROS_WS/install/setup.bash\" " \
       /ros_entrypoint.sh
 
 # launch ros package
