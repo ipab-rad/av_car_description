@@ -1,5 +1,12 @@
 FROM ros:humble-ros-base-jammy AS base
 
+# Switch to much faster mirror for apt processes
+ENV OLD_MIRROR archive.ubuntu.com
+ENV SEC_MIRROR security.ubuntu.com
+ENV NEW_MIRROR mirror.bytemark.co.uk
+
+RUN sed -i "s/$OLD_MIRROR\|$SEC_MIRROR/$NEW_MIRROR/g" /etc/apt/sources.list
+
 # Install key dependencies
 RUN apt update \
     && DEBIAN_FRONTEND=noninteractive \

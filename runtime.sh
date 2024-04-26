@@ -13,10 +13,10 @@ fi
 
 # Build docker image only up to base stage
 DOCKER_BUILDKIT=1 docker build \
--t car_description_humble \
+-t av_car_description:latest \
 -f Dockerfile --target runtime .
 
 # Run docker image without volumes
 docker run -it --rm --net host \
 -v /dev/shm:/dev/shm \
-car_description_humble $CMD
+av_car_description:latest $CMD
