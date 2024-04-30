@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.1 (2024-04-30)
+------------------
 * Fix pkg names (`#3 <https://github.com/ipab-rad/av_car_description/issues/3>`_)
   This PR adds `av\_` prefix and correct all the references that contian
   `car_description` into `av_car_description`
