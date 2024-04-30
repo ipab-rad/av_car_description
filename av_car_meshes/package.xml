@@ -12,7 +12,7 @@
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <depend>car_description</depend>
+  <depend>av_car_description</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
