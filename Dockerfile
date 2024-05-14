@@ -14,11 +14,16 @@ RUN apt-get update \
         ros-"$ROS_DISTRO"-xacro \
         ros-"$ROS_DISTRO"-robot-state-publisher \
         ros-"$ROS_DISTRO"-joint-state-publisher \
+        # Install Cyclone DDS ROS RMW
+        ros-"$ROS_DISTRO"-rmw-cyclonedds-cpp \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup ROS workspace folder
 ENV ROS_WS /opt/ros_ws
 WORKDIR $ROS_WS
+
+# Set cyclone DDS ROS RMW
+ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
 # -----------------------------------------------------------------------
 
