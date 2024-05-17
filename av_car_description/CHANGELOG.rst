@@ -4,7 +4,9 @@ Changelog for package av_car_description
 
 Forthcoming
 -----------
-* Add Cyclone DDS 
+* Add Cyclone DDS ROS RMW and configure for high msg throughput
+* Avoid overriding dev and runtime images when using docker scripts
+* Allow colorised ROS log
 
 1.0.1 (2024-04-30)
 ------------------
