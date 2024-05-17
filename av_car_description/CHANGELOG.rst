@@ -2,6 +2,10 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add Cyclone DDS 
+
 1.0.1 (2024-04-30)
 ------------------
 * Fix pkg names (`#3 <https://github.com/ipab-rad/av_car_description/issues/3>`_)
