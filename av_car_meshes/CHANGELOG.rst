@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2024-05-21)
+------------------
 * Add Cyclone DDS ROS RMW and configure for high msg throughput
 * Avoid overriding dev and runtime images when using docker scripts
 * Allow colorised ROS log
