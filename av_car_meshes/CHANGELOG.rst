@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2024-06-05)
+------------------
 * Add bash args to optionally load local cyclone_dds
 * Contributors: Alejandro Bordallo, hect95
 
