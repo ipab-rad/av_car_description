@@ -2,6 +2,11 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add bash args to optionally load local cyclone_dds
+* Contributors: Alejandro Bordallo, hect95
+
 1.1.0 (2024-05-21)
 ------------------
 * Add Cyclone DDS ROS RMW and configure for high msg throughput
