@@ -51,9 +51,11 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Verify CYCLONE_DIR exists
-if [ ! -f "$CYCLONE_DIR" ]; then
-    echo "$CYCLONE_DIR does not exist! Please provide a valid path to cyclone_dds.xml"
-    exit 1
+if [ -n "$CYCLONE_VOL" ]; then
+    if [ ! -f "$CYCLONE_DIR" ]; then
+        echo "$CYCLONE_DIR does not exist! Please provide a valid path to cyclone_dds.xml"
+        exit 1
+    fi
 fi
 
 # Build docker image only up to base stage
