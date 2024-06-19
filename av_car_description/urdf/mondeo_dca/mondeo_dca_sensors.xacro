@@ -12,11 +12,11 @@
     <origin xyz="-0.11015 0.3 -0.06242" rpy="0 0.087266 0"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="fsp_l_sensor" parent="camera_fsp_l_mount">
+  <xacro:camera_mount name="camera_fsp_l_sensor" parent="camera_fsp_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="fsp_l_optical" parent="fsp_l_sensor">
+  <xacro:camera_mount name="camera_fsp_l_optical" parent="camera_fsp_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -24,11 +24,11 @@
     <origin xyz="-0.11015 -0.3 -0.06242" rpy="0 0.087266 0"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="fsp_r_sensor" parent="camera_fsp_r_mount">
+  <xacro:camera_mount name="camera_fsp_r_sensor" parent="camera_fsp_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="fsp_r_optical" parent="fsp_r_sensor">
+  <xacro:camera_mount name="camera_fsp_r_optical" parent="camera_fsp_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -36,11 +36,11 @@
     <origin xyz="-0.69015 -0.45 -0.00242" rpy="0 0.087266 -1.151917"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspf_l_sensor" parent="camera_rspf_l_mount">
+  <xacro:camera_mount name="camera_rspf_l_sensor" parent="camera_rspf_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspf_l_optical" parent="rspf_l_sensor">
+  <xacro:camera_mount name="camera_rspf_l_optical" parent="camera_rspf_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -48,11 +48,11 @@
     <origin xyz="-0.781503 -0.490673 -0.00242" rpy="0 0.087266 -1.151917"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspf_r_sensor" parent="camera_rspf_r_mount">
+  <xacro:camera_mount name="camera_rspf_r_sensor" parent="camera_rspf_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspf_r_optical" parent="rspf_r_sensor">
+  <xacro:camera_mount name="camera_rspf_r_optical" parent="camera_rspf_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -60,11 +60,11 @@
     <origin xyz="-0.97015 -0.490673 -0.00242" rpy="0 0.087266 -1.989675"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspr_l_sensor" parent="camera_rspr_l_mount">
+  <xacro:camera_mount name="camera_rspr_l_sensor" parent="camera_rspr_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspr_l_optical" parent="rspr_l_sensor">
+  <xacro:camera_mount name="camera_rspr_l_optical" parent="camera_rspr_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -72,11 +72,11 @@
     <origin xyz="-1.061503 -0.450 0.00242" rpy="0 0.087266 -1.989675"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspr_r_sensor" parent="camera_rspr_r_mount">
+  <xacro:camera_mount name="camera_rspr_r_sensor" parent="camera_rspr_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rspr_r_optical" parent="rspr_r_sensor">
+  <xacro:camera_mount name="camera_rspr_r_optical" parent="camera_rspr_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -84,11 +84,11 @@
     <origin xyz="-1.11015 -0.3 0.00242" rpy="0 0.087266 3.141592654"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rsp_l_sensor" parent="camera_rsp_l_mount">
+  <xacro:camera_mount name="camera_rsp_l_sensor" parent="camera_rsp_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rsp_l_optical" parent="rsp_l_sensor">
+  <xacro:camera_mount name="camera_rsp_l_optical" parent="camera_rsp_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -96,11 +96,11 @@
     <origin xyz="-1.11015 0.3 0.00242" rpy="0 0.087266 3.141592654"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rsp_r_sensor" parent="camera_rsp_r_mount">
+  <xacro:camera_mount name="camera_rsp_r_sensor" parent="camera_rsp_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="rsp_r_optical" parent="rsp_r_sensor">
+  <xacro:camera_mount name="camera_rsp_r_optical" parent="camera_rsp_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -108,11 +108,11 @@
     <origin xyz="-1.061503 0.450 0.00242" rpy="0 0.087266 1.989675"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspr_l_sensor" parent="camera_lspr_l_mount">
+  <xacro:camera_mount name="camera_lspr_l_sensor" parent="camera_lspr_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspr_l_optical" parent="lspr_l_sensor">
+  <xacro:camera_mount name="camera_lspr_l_optical" parent="camera_lspr_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -120,11 +120,11 @@
     <origin xyz="-0.97015 0.490673 -0.00242" rpy="0 0.087266 1.989675"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspr_r_sensor" parent="camera_lspr_r_mount">
+  <xacro:camera_mount name="camera_lspr_r_sensor" parent="camera_lspr_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspr_r_optical" parent="lspr_r_sensor">
+  <xacro:camera_mount name="camera_lspr_r_optical" parent="camera_lspr_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -132,11 +132,11 @@
     <origin xyz="-0.781503 0.490673 -0.00242" rpy="0 0.087266 1.151917"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspf_l_sensor" parent="camera_lspf_l_mount">
+  <xacro:camera_mount name="camera_lspf_l_sensor" parent="camera_lspf_l_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspf_l_optical" parent="lspf_l_sensor">
+  <xacro:camera_mount name="camera_lspf_l_optical" parent="camera_lspf_l_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
@@ -144,11 +144,11 @@
     <origin xyz="-0.69015 0.45 -0.00242" rpy="0 0.087266 1.151917"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspf_r_sensor" parent="camera_lspf_r_mount">
+  <xacro:camera_mount name="camera_lspf_r_sensor" parent="camera_lspf_r_mount">
     <origin xyz="0 0 0" rpy="1.5708 3.1415 1.5708"/>
   </xacro:camera_mount>
 
-  <xacro:camera_mount name="lspf_r_optical" parent="lspf_r_sensor">
+  <xacro:camera_mount name="camera_lspf_r_optical" parent="camera_lspf_r_sensor">
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </xacro:camera_mount>
 
