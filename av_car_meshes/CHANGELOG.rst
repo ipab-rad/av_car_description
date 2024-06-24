@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.3.0 (2024-06-24)
+------------------
 * Prepend all sensor/optical frames with `camera\_`
 * Add sensor and optical frames for all cameras
   - Sensor frame is a rotation of mount but in camera coordinates
