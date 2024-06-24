@@ -2,6 +2,15 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Prepend all sensor/optical frames with `camera\_`
+* Add sensor and optical frames for all cameras
+  - Sensor frame is a rotation of mount but in camera coordinates
+  - Optical frame TF values now 0s will change in future when sensors are
+    calibrated with each other (i.e. cross-sensor registration)
+* Contributors: Alejandro Bordallo
+
 1.2.0 (2024-06-05)
 ------------------
 * Add bash args to optionally load local cyclone_dds
