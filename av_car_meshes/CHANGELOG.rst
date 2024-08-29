@@ -2,6 +2,13 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update `robot_state_publisher` package to the `ipab-rad` version to 
+  continuously publish `tf_static` topic
+
+* Contributors: hect95
+
 1.3.0 (2024-06-24)
 ------------------
 * Prepend all sensor/optical frames with `camera\_`
