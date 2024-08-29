@@ -1,9 +1,9 @@
 FROM ros:humble-ros-base-jammy AS base
 
 # Switch to much faster mirror for apt processes
-ENV OLD_MIRROR archive.ubuntu.com
-ENV SEC_MIRROR security.ubuntu.com
-ENV NEW_MIRROR mirror.bytemark.co.uk
+ENV OLD_MIRROR=archive.ubuntu.com
+ENV SEC_MIRROR=security.ubuntu.com
+ENV NEW_MIRROR=mirror.bytemark.co.uk
 
 RUN sed -i "s/$OLD_MIRROR\|$SEC_MIRROR/$NEW_MIRROR/g" /etc/apt/sources.list
 
@@ -18,7 +18,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Setup ROS workspace folder
-ENV ROS_WS /opt/ros_ws
+ENV ROS_WS=/opt/ros_ws
 WORKDIR $ROS_WS
 
 # Set cyclone DDS ROS RMW
@@ -33,7 +33,9 @@ ENV CYCLONEDDS_URI=file://${ROS_WS}/cyclone_dds.xml
 ENV RCUTILS_COLORIZED_OUTPUT=1
 
 # Clone custom robot state_publisher
-RUN git clone -b remove-static-tf-pub https://github.com/ipab-rad/robot_state_publisher.git "$ROS_WS"/src/robot_state_publisher
+RUN git clone -b tartan-humble \
+    https://github.com/ipab-rad/robot_state_publisher.git \
+    "$ROS_WS"/src/robot_state_publisher
 
 # -----------------------------------------------------------------------
 
@@ -74,7 +76,7 @@ CMD ["bash"]
 
 # -----------------------------------------------------------------------
 
-FROM base as runtime
+FROM base AS runtime
 
 # Copy artifacts/binaries from prebuilt
 COPY --from=prebuilt $ROS_WS/install $ROS_WS/install
