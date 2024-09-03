@@ -2,6 +2,13 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update `robot_state_publisher` pkg to `ipab-rad` version for continously
+  publish `tf_static`.
+
+* Contributors: hect95
+
 1.3.0 (2024-06-24)
 ------------------
 * Prepend all sensor/optical frames with `camera\_`
