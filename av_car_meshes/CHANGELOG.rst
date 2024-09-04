@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.4.0 (2024-09-04)
+------------------
 * Update `robot_state_publisher` package to the `ipab-rad` version to 
   continuously publish `tf_static` topic
 

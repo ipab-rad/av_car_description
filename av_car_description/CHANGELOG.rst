@@ -2,8 +2,8 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.4.0 (2024-09-04)
+------------------
 * Update `robot_state_publisher` pkg to `ipab-rad` version for continously
   publish `tf_static`.
 
