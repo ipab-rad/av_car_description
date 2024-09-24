@@ -2,6 +2,14 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* New camera extrinsics (`#16 <https://github.com/ipab-rad/av_car_description/issues/16>`_)
+  - Update camera extrinsics based on camera lidar calibration
+  - The extrinsics are based on camera configuration defined in
+  https://github.com/ipab-rad/av_camera/pull/7
+* Contributors: Hector Cruz
+
 1.4.0 (2024-09-04)
 ------------------
 * Update `robot_state_publisher` pkg to `ipab-rad` version for continously
