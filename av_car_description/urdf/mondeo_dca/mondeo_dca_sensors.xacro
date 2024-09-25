@@ -17,7 +17,7 @@
   </xacro:camera_mount>
 
   <xacro:camera_mount name="camera_fsp_l_optical" parent="camera_fsp_l_sensor">
-    <origin xyz="-0.0018577 -0.0458795 0.104066" rpy="0.0337803 0.001314 -0.0119997"/>
+    <origin xyz="-0.0159515 -0.0271456 0.114486" rpy="0.0368413 0.00292173 -0.009337"/>
   </xacro:camera_mount>
 
   <xacro:camera_mount name="camera_fsp_r_mount" parent="${roof_datum}">
