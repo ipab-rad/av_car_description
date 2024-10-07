@@ -2,6 +2,11 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update fsp_l camera tf (`#17 <https://github.com/ipab-rad/av_car_description/issues/17>`_)
+* Contributors: Hector Cruz
+
 1.5.0 (2024-09-24)
 ------------------
 * New camera extrinsics (`#16 <https://github.com/ipab-rad/av_car_description/issues/16>`_)
