@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.5.1 (2024-10-07)
+------------------
 * Update fsp_l camera tf (`#17 <https://github.com/ipab-rad/av_car_description/issues/17>`_)
 * Contributors: Hector Cruz
 
