@@ -2,6 +2,13 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add calibrated lidar extrniscs between:
+  * lidar_ouster_top -> lidar_left
+  * lidar_ouster_top -> lidar_right
+* Contributors: Hector Cruz, hect95
+
 1.5.1 (2024-10-07)
 ------------------
 * Update fsp_l camera tf (`#17 <https://github.com/ipab-rad/av_car_description/issues/17>`_)
