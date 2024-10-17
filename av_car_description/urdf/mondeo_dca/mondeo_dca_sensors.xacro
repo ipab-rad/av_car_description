@@ -196,21 +196,29 @@
     <origin xyz="-0.66015 0 0.19758" rpy="0 0 0"/>
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_left_old" parent="${roof_datum}">
+  <xacro:lidar name="lidar_left_no_calib" parent="${roof_datum}">
     <origin xyz="-0.03015 0.720 -0.22242" rpy="-0.087266 0.087266 0.6562438"/>
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_left" parent="vehicle_roof_datum">
+  <xacro:lidar name="lidar_left_calib_v1" parent="vehicle_roof_datum">
     <origin xyz="0.0107329 0.728872 -0.116884" rpy="-0.0388081 0.102642 0.65186" />
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_right_old" parent="${roof_datum}">
+  <xacro:lidar name="lidar_left" parent="vehicle_roof_datum">
+    <origin xyz="0.0124227 0.727969 -0.112672" rpy="-0.037683 0.102063 0.651836" />
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_right_no_calib" parent="${roof_datum}">
     <origin xyz="-0.03015 -0.720 -0.22242" rpy="0.087266 0.087266 -0.6562438"/>
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_right" parent="vehicle_roof_datum">
+  <xacro:lidar name="lidar_right_calib_v1" parent="vehicle_roof_datum">
     <origin xyz="-0.0115331 -0.705366 -0.133119" rpy="0.026757 0.0875472 -0.655852" />
   </xacro:lidar>
+
+  <xacro:lidar name="lidar_right" parent="vehicle_roof_datum">
+    <origin xyz="-0.00715063 -0.714411 -0.160957" rpy="0.0316876 0.0944851 -0.655334" />
+  </xacro:lidar>  
 
   <xacro:lidar name="lidar_ouster_top" parent="${roof_datum}">
     <origin xyz="-0.65855 0 0.21849" rpy="0 -0.017453 0"/>
