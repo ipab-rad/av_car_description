@@ -192,16 +192,20 @@
   </xacro:gps>
 
   <!-- LIDAR -->
-  <xacro:lidar name="lidar_top" parent="${roof_datum}">
-    <origin xyz="-0.66015 0 0.19758" rpy="0 0 0"/>
-  </xacro:lidar>
-
-  <xacro:lidar name="lidar_left" parent="${roof_datum}">
+  <xacro:lidar name="lidar_left_mount" parent="${roof_datum}">
     <origin xyz="-0.03015 0.720 -0.22242" rpy="-0.087266 0.087266 0.6562438"/>
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_right" parent="${roof_datum}">
+  <xacro:lidar name="lidar_left" parent="lidar_left_mount">
+    <origin xyz="0.0288801 -0.0294088 0.110552" rpy="0.0499763 0.0151241 -0.00307838"/>
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_right_mount" parent="${roof_datum}">
     <origin xyz="-0.03015 -0.720 -0.22242" rpy="0.087266 0.087266 -0.6562438"/>
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_right" parent="lidar_right_mount">
+    <origin xyz="0.00939891 0.0238397 0.0606727" rpy="-0.0556599 0.00727062 0.000273152"/>
   </xacro:lidar>
 
   <xacro:lidar name="lidar_ouster_top" parent="${roof_datum}">
