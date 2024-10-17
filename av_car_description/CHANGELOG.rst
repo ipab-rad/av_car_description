@@ -4,7 +4,7 @@ Changelog for package av_car_description
 
 Forthcoming
 -----------
-* Add calibrated lidar extrniscs between:
+* Add calibrated lidar extrinsics between:
   * lidar_ouster_top -> lidar_left
   * lidar_ouster_top -> lidar_right
 * Contributors: Hector Cruz, hect95
