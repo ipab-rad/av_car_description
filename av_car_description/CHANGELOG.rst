@@ -4,9 +4,15 @@ Changelog for package av_car_description
 
 Forthcoming
 -----------
-* Add calibrated lidar extrinsics between:
-  * lidar_ouster_top -> lidar_left
-  * lidar_ouster_top -> lidar_right
+* Refactor LIDAR mounting structure based on LIDAR calibration.
+  - Perform adjustments based on calibration between `lidar_ouster_top` and both `lidar_left`
+    and `lidar_right`.
+    - Update the old chain: `vehicle_roof_datum -> lidar_left` and 
+      `vehicle_roof_datum -> lidar_right` to:
+      - `vehicle_roof_datum -> lidar_left_mount -> lidar_left`
+      - `vehicle_roof_datum -> lidar_right_mount -> lidar_right`
+  - Ensure that the new chain `vehicle_roof_datum -> lidar_x_mount` matches 
+    the old `vehicle_roof_datum -> lidar_x` TF for future reference.
 * Contributors: Hector Cruz, hect95
 
 1.5.1 (2024-10-07)
