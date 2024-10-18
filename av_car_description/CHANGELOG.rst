@@ -2,8 +2,8 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.6.0 (2024-10-18)
+------------------
 * Refactor LIDAR mounting structure based on LIDAR calibration.
   - Perform adjustments based on calibration between `lidar_ouster_top` and both `lidar_left`
     and `lidar_right`.
