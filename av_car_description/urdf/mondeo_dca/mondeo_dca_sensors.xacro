@@ -169,26 +169,37 @@
   </xacro:camera_mount>
 
   <!-- IMU -->
-  <xacro:imu imu="imu_rear_mount">
-    <origin xyz="${oxts_x-0.19} ${oxts_y+0.23} ${oxts_z-0.44}" rpy="0 0 0"/>
+  <xacro:imu imu="imu_rear_mount" parent="${roof_datum}">
+    <origin xyz="-2.67 0.0 -1.102" rpy="0.0 3.14159 -1.5708"/>
   </xacro:imu>
 
-  <xacro:imu imu="imu_fsp_r_mount">
-    <origin xyz="-0.23515 -0.355 -0.05442" rpy="0 0 0"/>
+  <xacro:imu imu="imu_rear_sensor" parent="imu_rear_mount">
+    <origin xyz="0.0 0.0 0.0" rpy="3.14159 0.0 0.0 "/>
   </xacro:imu>
 
-  <!-- OXTS -->
-  <xacro:oxts name="oxts">
-    <origin xyz="${oxts_x} ${oxts_y} ${oxts_z}" rpy="0.0 0.0 0.0"/>
-  </xacro:oxts>
+  <xacro:imu imu="imu_fsp_r_mount" parent="${roof_datum}">
+    <origin xyz="-0.23515 -0.355 -0.05442" rpy="0.0 3.14159 -1.5708"/>
+  </xacro:imu>
+
+  <xacro:imu imu="imu_fsp_r_sensor" parent="imu_fsp_r_mount">
+    <origin xyz="0.0 0.0 0.0" rpy="3.14159 0.0 0.0"/>
+  </xacro:imu>
 
   <!-- GPS -->
-  <xacro:gps name="gps_antenna_right_mount">
+  <xacro:gps name="gps_antenna_right_mount" parent="${roof_datum}">
     <origin xyz="${gps_antenna_base_left_x} ${-gps_antenna_base_left_y} ${gps_antenna_base_left_z}" rpy="0 0 0"/>
   </xacro:gps>
 
-  <xacro:gps name="gps_antenna_left_mount">
+  <xacro:gps name="gps_antenna_right_sensor" parent="gps_antenna_right_mount">
+    <origin xyz="0.0 0.0 ${gps_antenna_sensor_z}" rpy="0 0 0"/>
+  </xacro:gps>
+
+  <xacro:gps name="gps_antenna_left_mount" parent="${roof_datum}">
     <origin xyz="${gps_antenna_base_left_x} ${gps_antenna_base_left_y} ${gps_antenna_base_left_z}" rpy="0 0 0"/>
+  </xacro:gps>
+
+  <xacro:gps name="gps_antenna_left_sensor" parent="gps_antenna_left_mount">
+    <origin xyz="0.0 0.0 ${gps_antenna_sensor_z}" rpy="0 0 0"/>
   </xacro:gps>
 
   <!-- LIDAR -->

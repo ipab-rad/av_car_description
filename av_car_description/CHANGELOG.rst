@@ -2,6 +2,26 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add *_mount and *_sensor chains for IMUs/GPS
+  - Define `imu_rear_mount` -> `imu_rear_sensor` and
+  `imu_fps_r_mount` -> `imu_fps_r_sensor` TFs
+  - `*_mount` frames describe the physical sensor
+  orientation
+  - `*_sensor` frames describe the orientation that is
+  consistent with the microstrain IMU ROS driver ENU measurements
+  - Fix `imu_rear_mount` Y translation based on in-house
+  measurements
+  - Fix `gps_antenna\_*_mount` translation based on in-house
+  measurements
+  - Define `gps_antenna\_*_mount` -> `gps_antenna\_*_sensor` TF
+    based on GNSS antenna hight relative to mount
+* Remove `oxts*` frames and parameters as the sensor is no longer
+  mounted in the vehicle
+  
+* Contributors: Hector Cruz
+
 1.6.0 (2024-10-18)
 ------------------
 * Refactor LIDAR mounting structure based on LIDAR calibration.

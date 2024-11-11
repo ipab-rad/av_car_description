@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:macro name="imu" params="imu *origin">
+  <xacro:macro name="imu" params="imu parent *origin">
     <joint name="${imu}_joint" type="fixed">
       <xacro:insert_block name="origin"/>
-      <parent link="${roof_datum}"/>
+      <parent link="${parent}"/>
       <child link="${imu}"/>
     </joint>
     <link name="${imu}">
