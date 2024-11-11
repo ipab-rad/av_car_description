@@ -2,8 +2,8 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2024-11-11)
+------------------
 * Add *_mount and *_sensor chains for IMUs/GPS
   - Define `imu_rear_mount` -> `imu_rear_sensor` and
   `imu_fps_r_mount` -> `imu_fps_r_sensor` TFs
