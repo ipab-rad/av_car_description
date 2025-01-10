@@ -9,11 +9,14 @@
   <xacro:property name="car_offz" value="${0.04 + car_height/2}"/>
   <xacro:property name="centre_grav_z" value="0.0"/>
   <xacro:property name="wheelbase" value="2.85"/>
-  <!-- Relative to rear_axle -->
+  
+  <!-- ** base_link located at rear_axle **-->
+
+  <!-- Relative to base_link -->
   <xacro:property name="vehicle_bonnet_x" value="${wheelbase}"/>
-  <!-- Relative to rear_axle -->
+  <!-- Relative to base_link -->
   <xacro:property name="vehicle_bonnet_z" value="${0.69 - center_axle_z}"/>
-  <!-- Relative to rear_axle -->
+  <!-- Relative to base_link -->
   <xacro:property name="front_axle_x" value="${wheelbase}"/>
   <xacro:property name="wheel_front_y" value="0.79121"/>
   <!-- The distance of front wheel joints from axle center -->
@@ -22,7 +25,7 @@
   <xacro:property name="center_axle_x" value="1.425"/>
   <xacro:property name="center_axle_z" value="0.33"/>
   <!-- Above ground footprint -->
-  <xacro:property name="rear_axle_z" value="0.33"/>
+  <xacro:property name="base_link_z" value="0.33"/>
   <!-- Relative to rear_alxe -->
   <xacro:property name="roof_datum_x" value="1.88985"/>
   <xacro:property name="roof_datum_z" value="1.23242"/>
@@ -32,9 +35,9 @@
 
   <!-- FOOTPRINT (Delimited by chassis extremes) -->
   <xacro:property name="footprint_front_x" value="3.805"/>
-  <!-- Relative to rear_axle -->
+  <!-- Relative to base_link -->
   <xacro:property name="footprint_rear_x" value="-1.1"/>
-  <!-- Relative to rear_axle -->
+  <!-- Relative to base_link -->
   <xacro:property name="footprint_y" value="${2.14 / 2.0}"/>
   <!-- Symmetric about the centreline -->
 

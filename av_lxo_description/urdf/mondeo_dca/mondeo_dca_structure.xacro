@@ -32,7 +32,7 @@
 
   <joint name="${vehicle_bonnet}_joint" type="fixed">
     <origin xyz="${vehicle_bonnet_x} 0 ${vehicle_bonnet_z}" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="${vehicle_bonnet}"/>
   </joint>
   <link name="${vehicle_bonnet}">
@@ -45,10 +45,10 @@
 
   <joint name="center_axle_joint" type="fixed">
     <origin xyz="${center_axle_x} 0 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="center_axle"/>
   </joint>
-  <link name="rear_axle">
+  <link name="base_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.01"/>
@@ -58,7 +58,7 @@
 
   <joint name="${roof_datum}_joint" type="fixed">
     <origin xyz="${roof_datum_x} 0 ${roof_datum_z}" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="${roof_datum}"/>
   </joint>
   <link name="${roof_datum}">
@@ -231,7 +231,7 @@
 
   <joint name="front_axle_joint" type="fixed">
     <origin xyz="${wheelbase} 0 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="front_axle"/>
   </joint>
   <link name="front_axle">
@@ -255,15 +255,15 @@
     </inertial>
   </link>
 
-  <joint name="rear_axle_joint" type="fixed">
-    <origin xyz="0 0 ${rear_axle_z}" rpy="0 0 0"/>
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 ${base_link_z}" rpy="0 0 0"/>
     <parent link="base_footprint"/>
-    <child link="rear_axle"/>
+    <child link="base_link"/>
   </joint>
 
   <joint name="steer_fl" type="revolute">
     <origin xyz="${front_axle_x} ${wheel_front_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="steer_fl"/>
     <axis xyz="0 0 1.0"/>
     <limit lower="-0.6" upper="0.6" effort="10000" velocity="10"/>
@@ -271,7 +271,7 @@
 
   <joint name="steer_fr" type="revolute">
     <origin xyz="${front_axle_x} -${wheel_front_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="steer_fr"/>
     <axis xyz="0 0 1.0"/>
     <limit lower="-0.6" upper="0.6" effort="10000" velocity="10"/>
@@ -297,7 +297,7 @@
 
   <joint name="wheel_rl" type="continuous">
     <origin xyz="0.0 ${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="wheel_rl"/>
     <axis xyz="0 0 1.0"/>
     <limit dissipation="1" effort="1000.0" velocity="${48*pi}"/>
@@ -306,7 +306,7 @@
 
   <joint name="wheel_rr" type="continuous">
     <origin xyz="0.0 -${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="wheel_rr"/>
     <axis xyz="0 0 1.0"/>
     <limit dissipation="1" effort="1000.0" velocity="${48*pi}"/>
@@ -316,28 +316,28 @@
   <!-- Footprint Frames -->
   <joint name="footprint_fl_joint" type="fixed">
     <origin xyz="${footprint_front_x} ${footprint_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="footprint_fl"/>
   </joint>
   <link name="footprint_fl"/>
 
   <joint name="footprint_fr_joint" type="fixed">
     <origin xyz="${footprint_front_x} ${-footprint_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="footprint_fr"/>
   </joint>
   <link name="footprint_fr"/>
 
   <joint name="footprint_rl_joint" type="fixed">
     <origin xyz="${footprint_rear_x} ${footprint_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="footprint_rl"/>
   </joint>
   <link name="footprint_rl"/>
 
   <joint name="footprint_rr_joint" type="fixed">
     <origin xyz="${footprint_rear_x} ${-footprint_y} 0" rpy="0 0 0"/>
-    <parent link="rear_axle"/>
+    <parent link="base_link"/>
     <child link="footprint_rr"/>
   </joint>
   <link name="footprint_rr"/>

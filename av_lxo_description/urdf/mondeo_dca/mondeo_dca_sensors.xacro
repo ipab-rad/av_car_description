@@ -252,7 +252,7 @@
     <origin xyz="-0.16666 -0.58893 0.24618" rpy="3.141592654 0 -0.645772"/>
   </xacro:radar>
 
-  <xacro:radar name="radar_bumper_rear_centre_mount" parent="rear_axle">
+  <xacro:radar name="radar_bumper_rear_centre_mount" parent="base_link">
     <origin xyz="-1.04 0 0.16" rpy="0 0 3.141592654"/>
   </xacro:radar>
 </robot>
