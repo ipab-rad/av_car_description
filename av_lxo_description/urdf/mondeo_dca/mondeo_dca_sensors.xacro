@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find av_car_description)/urdf/cameras.xacro"/>
-  <xacro:include filename="$(find av_car_description)/urdf/lidar.xacro"/>
-  <xacro:include filename="$(find av_car_description)/urdf/radar.xacro"/>
-  <xacro:include filename="$(find av_car_description)/urdf/imu.xacro"/>
-  <xacro:include filename="$(find av_car_description)/urdf/gps.xacro"/>
-  <xacro:include filename="$(find av_car_description)/urdf/oxts.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/cameras.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/lidar.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/radar.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/imu.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/gps.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/oxts.xacro"/>
 
   <!-- DCA ROOFBOX CAMERA MOUNTS -->
   <xacro:camera_mount name="camera_fsp_l_mount" parent="${roof_datum}">

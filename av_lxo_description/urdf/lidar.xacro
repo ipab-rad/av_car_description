@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:include filename="$(find av_car_description)/urdf/velodyne/HDL-32E.urdf.xacro"/>
+  <xacro:include filename="$(find av_lxo_description)/urdf/velodyne/HDL-32E.urdf.xacro"/>
 
   <xacro:macro name="lidar" params="name parent *origin">
     <joint name="${name}_joint" type="fixed">

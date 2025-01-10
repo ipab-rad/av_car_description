@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(av_car_meshes)
+project(av_lxo_meshes)
 
 find_package(ament_cmake_ros REQUIRED)
 

@@ -87,4 +87,4 @@ RUN sed --in-place --expression \
       /ros_entrypoint.sh
 
 # launch ros package
-CMD ["ros2", "launch", "av_car_description", "car_description.launch.xml"]
+CMD ["ros2", "launch", "av_lxo_description", "car_description.launch.xml"]

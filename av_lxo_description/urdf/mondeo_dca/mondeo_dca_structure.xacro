@@ -18,14 +18,14 @@
     <visual name="chassis">
       <origin xyz="${1.361 - base_link_x} 0 -0.33647" rpy="0 0 ${pi/2}"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/mondeo_grey.dae" scale="1 1 1"/>
+        <mesh filename="package://av_lxo_meshes/meshes/mondeo_grey.dae" scale="1 1 1"/>
       </geometry>
       <material name="black.001"/>
     </visual>
     <collision name="chassis_collision">
       <origin xyz="${1.4621 - base_link_x} -0.03046 0.350609" rpy="${pi/2} 0 -${pi}"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/body_collision.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://av_lxo_meshes/meshes/body_collision.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -101,7 +101,7 @@
     <visual name="wheel_fl_visual">
       <origin xyz="0 0 0" rpy="-${pi/2} ${pi/2} 0"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/mondeo_wheel.dae"/>
+        <mesh filename="package://av_lxo_meshes/meshes/mondeo_wheel.dae"/>
       </geometry>
       <material name="carpaint_002"/>
     </visual>
@@ -137,7 +137,7 @@
     <visual name="wheel_fr_visual">
       <origin xyz="0 0 0" rpy="-${pi/2} -${pi/2} 0"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/mondeo_wheel.dae"/>
+        <mesh filename="package://av_lxo_meshes/meshes/mondeo_wheel.dae"/>
       </geometry>
       <material name="carpaint_002.001"/>
     </visual>
@@ -173,7 +173,7 @@
     <visual name="wheel_rl_visual">
       <origin xyz="0 0 0" rpy="-${pi/2} ${pi/2} 0"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/mondeo_wheel.dae"/>
+        <mesh filename="package://av_lxo_meshes/meshes/mondeo_wheel.dae"/>
       </geometry>
       <material name="carpaint_002.003"/>
     </visual>
@@ -209,7 +209,7 @@
     <visual name="wheel_rr_visual">
       <origin xyz="0 0 0" rpy="-${pi/2} -${pi/2} 0"/>
       <geometry>
-        <mesh filename="package://av_car_meshes/meshes/mondeo_wheel.dae"/>
+        <mesh filename="package://av_lxo_meshes/meshes/mondeo_wheel.dae"/>
       </geometry>
       <material name="carpaint_002.002"/>
     </visual>
