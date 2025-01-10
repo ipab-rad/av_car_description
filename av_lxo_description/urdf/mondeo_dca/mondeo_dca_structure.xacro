@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dbw_mkz">
   <link name="base_footprint"/>
 
-  <link name="base_link">
+  <link name="center_axle">
     <inertial>
       <origin xyz="0 0 ${centre_grav_z}" rpy="0 0 0"/>
       <mass value="${chassis_weight}"/>
@@ -16,14 +16,14 @@
       />
     </inertial>
     <visual name="chassis">
-      <origin xyz="${1.361 - base_link_x} 0 -0.33647" rpy="0 0 ${pi/2}"/>
+      <origin xyz="${1.361 - center_axle_x} 0 -0.33647" rpy="0 0 ${pi/2}"/>
       <geometry>
         <mesh filename="package://av_lxo_meshes/meshes/mondeo_grey.dae" scale="1 1 1"/>
       </geometry>
       <material name="black.001"/>
     </visual>
     <collision name="chassis_collision">
-      <origin xyz="${1.4621 - base_link_x} -0.03046 0.350609" rpy="${pi/2} 0 -${pi}"/>
+      <origin xyz="${1.4621 - center_axle_x} -0.03046 0.350609" rpy="${pi/2} 0 -${pi}"/>
       <geometry>
         <mesh filename="package://av_lxo_meshes/meshes/body_collision.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -32,7 +32,7 @@
 
   <joint name="${vehicle_bonnet}_joint" type="fixed">
     <origin xyz="${vehicle_bonnet_x} 0 ${vehicle_bonnet_z}" rpy="0 0 0"/>
-    <parent link="base_link"/>
+    <parent link="rear_axle"/>
     <child link="${vehicle_bonnet}"/>
   </joint>
   <link name="${vehicle_bonnet}">
@@ -43,10 +43,10 @@
     </inertial>
   </link>
 
-  <joint name="rear_axle_joint" type="fixed">
-    <origin xyz="${rear_axle_x} 0 ${rear_axle_z}" rpy="0 0 0"/>
-    <parent link="base_link"/>
-    <child link="rear_axle"/>
+  <joint name="center_axle_joint" type="fixed">
+    <origin xyz="${center_axle_x} 0 0" rpy="0 0 0"/>
+    <parent link="rear_axle"/>
+    <child link="center_axle"/>
   </joint>
   <link name="rear_axle">
     <inertial>
@@ -230,8 +230,8 @@
   </link>
 
   <joint name="front_axle_joint" type="fixed">
-    <origin xyz="${front_axle_x} 0 0" rpy="0 0 0"/>
-    <parent link="base_link"/>
+    <origin xyz="${wheelbase} 0 0" rpy="0 0 0"/>
+    <parent link="rear_axle"/>
     <child link="front_axle"/>
   </joint>
   <link name="front_axle">
@@ -255,15 +255,15 @@
     </inertial>
   </link>
 
-  <joint name="base_link" type="fixed">
-    <origin xyz="${base_link_x} 0 ${base_link_z}" rpy="0 0 0"/>
+  <joint name="rear_axle_joint" type="fixed">
+    <origin xyz="0 0 ${rear_axle_z}" rpy="0 0 0"/>
     <parent link="base_footprint"/>
-    <child link="base_link"/>
+    <child link="rear_axle"/>
   </joint>
 
   <joint name="steer_fl" type="revolute">
     <origin xyz="${front_axle_x} ${wheel_front_y} 0" rpy="0 0 0"/>
-    <parent link="base_link"/>
+    <parent link="rear_axle"/>
     <child link="steer_fl"/>
     <axis xyz="0 0 1.0"/>
     <limit lower="-0.6" upper="0.6" effort="10000" velocity="10"/>
@@ -271,7 +271,7 @@
 
   <joint name="steer_fr" type="revolute">
     <origin xyz="${front_axle_x} -${wheel_front_y} 0" rpy="0 0 0"/>
-    <parent link="base_link"/>
+    <parent link="rear_axle"/>
     <child link="steer_fr"/>
     <axis xyz="0 0 1.0"/>
     <limit lower="-0.6" upper="0.6" effort="10000" velocity="10"/>
@@ -296,8 +296,8 @@
   </joint>
 
   <joint name="wheel_rl" type="continuous">
-    <origin xyz="-${front_axle_x} ${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
-    <parent link="base_link"/>
+    <origin xyz="0.0 ${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
+    <parent link="rear_axle"/>
     <child link="wheel_rl"/>
     <axis xyz="0 0 1.0"/>
     <limit dissipation="1" effort="1000.0" velocity="${48*pi}"/>
@@ -305,8 +305,8 @@
   </joint>
 
   <joint name="wheel_rr" type="continuous">
-    <origin xyz="-${front_axle_x} -${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
-    <parent link="base_link"/>
+    <origin xyz="0.0 -${wheel_rear_y} 0" rpy="${pi/2} 0 -${pi}"/>
+    <parent link="rear_axle"/>
     <child link="wheel_rr"/>
     <axis xyz="0 0 1.0"/>
     <limit dissipation="1" effort="1000.0" velocity="${48*pi}"/>

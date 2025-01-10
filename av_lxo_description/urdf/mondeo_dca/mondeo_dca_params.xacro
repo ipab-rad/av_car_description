@@ -8,28 +8,27 @@
   <xacro:property name="car_offy" value="0.0"/>
   <xacro:property name="car_offz" value="${0.04 + car_height/2}"/>
   <xacro:property name="centre_grav_z" value="0.0"/>
-  <!-- Relative to base_link -->
-  <xacro:property name="vehicle_bonnet_x" value="${2.85 - base_link_x}"/>
-  <!-- Relative to base_link -->
-  <xacro:property name="vehicle_bonnet_z" value="${0.69 - base_link_z}"/>
-  <!-- Relative to base_link -->
-  <xacro:property name="front_axle_x" value="1.425"/>
+  <xacro:property name="wheelbase" value="2.85"/>
+  <!-- Relative to rear_axle -->
+  <xacro:property name="vehicle_bonnet_x" value="${wheelbase}"/>
+  <!-- Relative to rear_axle -->
+  <xacro:property name="vehicle_bonnet_z" value="${0.69 - center_axle_z}"/>
+  <!-- Relative to rear_axle -->
+  <xacro:property name="front_axle_x" value="${wheelbase}"/>
   <xacro:property name="wheel_front_y" value="0.79121"/>
   <!-- The distance of front wheel joints from axle center -->
   <xacro:property name="wheel_rear_y" value="0.7874"/>
   <!-- The distance of rear wheel joints from axle center -->
-  <xacro:property name="base_link_x" value="1.425"/>
-  <xacro:property name="base_link_z" value="0.33"/>
+  <xacro:property name="center_axle_x" value="1.425"/>
+  <xacro:property name="center_axle_z" value="0.33"/>
   <!-- Above ground footprint -->
-  <xacro:property name="rear_axle_x" value="${-base_link_x}"/>
-  <!-- Relative to base_link -->
-  <xacro:property name="rear_axle_z" value="0.0"/>
-  <!-- Relative to base_link -->
+  <xacro:property name="rear_axle_z" value="0.33"/>
+  <!-- Relative to rear_alxe -->
   <xacro:property name="roof_datum_x" value="1.88985"/>
   <xacro:property name="roof_datum_z" value="1.23242"/>
-  <xacro:property name="front_bumper_x" value="0.915"/>
   <!-- Relative to vehicle_bonnet -->
-  <xacro:property name="front_bumper_z" value="${0.23 - (vehicle_bonnet_z + base_link_z)}"/>
+  <xacro:property name="front_bumper_x" value="0.915"/>
+  <xacro:property name="front_bumper_z" value="${0.23 - (vehicle_bonnet_z + center_axle_z)}"/>
 
   <!-- FOOTPRINT (Delimited by chassis extremes) -->
   <xacro:property name="footprint_front_x" value="3.805"/>
