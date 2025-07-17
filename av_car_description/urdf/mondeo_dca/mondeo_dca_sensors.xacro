@@ -219,8 +219,16 @@
     <origin xyz="0.00939891 0.0238397 0.0606727" rpy="-0.0556599 0.00727062 0.000273152"/>
   </xacro:lidar>
 
+  <xacro:lidar name="lidar_front_mount" parent="${roof_datum}">
+    <origin xyz="1.777 0 -1.240" rpy="0 0 -3.142"/>
+  </xacro:lidar>
+
+  <xacro:lidar name="lidar_front" parent="lidar_front_mount">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </xacro:lidar>
+
   <xacro:lidar name="lidar_top" parent="${roof_datum}">
-    <origin xyz="-0.65855 0 0.26" rpy="0 0 1.5708"/>
+    <origin xyz="-0.65855 0 0.281" rpy="0 0 1.5708"/>
   </xacro:lidar>
 
   <!-- RADAR -->
