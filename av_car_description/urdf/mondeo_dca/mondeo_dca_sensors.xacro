@@ -17,7 +17,7 @@
   </xacro:camera_mount>
 
   <xacro:camera_mount name="camera_fsp_l_optical" parent="camera_fsp_l_sensor">
-    <origin xyz="-0.0159515 -0.0271456 0.114486" rpy="0.0368413 0.00292173 -0.009337"/>
+    <origin xyz="-0.011874 0.049085 0.079928" rpy="0.000929 -0.005284 -0.007228"/>
   </xacro:camera_mount>
 
   <xacro:camera_mount name="camera_fsp_r_mount" parent="${roof_datum}">
@@ -219,8 +219,8 @@
     <origin xyz="0.00939891 0.0238397 0.0606727" rpy="-0.0556599 0.00727062 0.000273152"/>
   </xacro:lidar>
 
-  <xacro:lidar name="lidar_ouster_top" parent="${roof_datum}">
-    <origin xyz="-0.65855 0 0.21849" rpy="0 -0.017453 0"/>
+  <xacro:lidar name="lidar_top" parent="${roof_datum}">
+    <origin xyz="-0.65855 0 0.26" rpy="0 0 1.5708"/>
   </xacro:lidar>
 
   <!-- RADAR -->
