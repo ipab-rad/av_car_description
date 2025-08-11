@@ -2,6 +2,17 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update camera and lidar TFs based on new calibration (`#35 <https://github.com/ipab-rad/av_car_description/issues/35>`_)
+  - Use `lidar_top` instead of `lidar_ouster_top`
+  - Add new `lidar_front_mount` -> `lidar_front` TF
+  - Transformations updated:
+  - `vehicle_roof_datum` -> `lidar_X_mount`
+  - `lidar_X_mount` -> `lidar_X`
+  -  `camera_X_sensor` -> `camera_X_optical`
+* Contributors: Hector Cruz
+
 2.0.0 (2024-11-11)
 ------------------
 * Add *_mount and *_sensor chains for IMUs/GPS
