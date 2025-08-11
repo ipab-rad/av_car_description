@@ -2,8 +2,8 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2025-08-11)
+------------------
 * Update camera and lidar TFs based on new calibration (`#35 <https://github.com/ipab-rad/av_car_description/issues/35>`_)
   - Use `lidar_top` instead of `lidar_ouster_top`
   - Add new `lidar_front_mount` -> `lidar_front` TF
