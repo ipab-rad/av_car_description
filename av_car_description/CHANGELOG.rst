@@ -2,6 +2,13 @@
 Changelog for package av_car_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add radar sensors frames to av_car_description (`#42 <https://github.com/ipab-rad/av_car_description/issues/42>`_)
+  Separate sensor and mount frames to highlight some radar sensors are
+  installed upside down (plug-left vs. plug-right)
+* Contributors: Alejandro Bordallo
+
 3.0.0 (2025-08-11)
 ------------------
 * Update camera and lidar TFs based on new calibration (`#35 <https://github.com/ipab-rad/av_car_description/issues/35>`_)

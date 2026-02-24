@@ -2,6 +2,9 @@
 Changelog for package av_car_meshes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 3.0.0 (2025-08-11)
 ------------------
 * Update camera and lidar TFs based on new calibration (`#35 <https://github.com/ipab-rad/av_car_description/issues/35>`_)
